@@ -2,9 +2,9 @@ services:
   app:
     build: .
     ports:
-      - '3000:3000'
+      - '3100:3000'
     environment:
-      - DATABASE_URL=postgres://postgres:postgres@db:5432/tgbot
+      - DATABASE_URL=postgres://postgres:postgres@localhost:5432/bot_manager_bot
       - NEXT_PUBLIC_SITEKEY=${NEXT_PUBLIC_SITEKEY}
       - NEXT_PUBLIC_DOMAIN=${NEXT_PUBLIC_DOMAIN}
       - ADMIN_ID=${ADMIN_ID}
@@ -16,7 +16,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: tgbot
+      POSTGRES_DB: bot_manager_bot
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
